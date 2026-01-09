@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Catalog 2026</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #38bdf8;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
+        h4 { opacity: 0.8; font-weight: 400; margin-bottom: 2rem; }
+
+        .container { width: 100%; max-width: 90%; }
+
+        /* The "Mindblowing" Flex Grid */
+        .product-row {
+            display: flex;
+            flex-wrap: wrap; /* Wraps to 100% width on small screens */
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            flex: 1 1 280px; /* Grow, Shrink, Basis */
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #334155; /* Placeholder color */
+        }
+
+        /* Modernized Table */
+        .table-container {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            text-align: left;
+        }
+
+        th, td { 
+            padding: 16px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        th { 
+            color: var(--accent); 
+            text-transform: uppercase; 
+            font-size: 0.8rem; letter-spacing: 1px;
+         }
+
+        button {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover { 
+            opacity: 0.9; 
+        }
+
+        .status-stock { 
+            color: #4ade80; 
+        }
+
+
+        .status-out { 
+            color: #f87171; 
+        }
+
+        footer { 
+            margin-top: 50px; 
+            opacity: 0.5; 
+            font-size: 0.9rem; 
+        }
+
+        hr{
+            border-color: var(--accent);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="text-align: center;">
+            <h1>Mini Product Catalog</h1>
+            <hr>
+            <h4>Browse our latest products and exclusive 2026 deals</h4>
+        </header>
+
+        <h2 style="margin-top: 40px;">Featured Products</h2>
+        <div class="product-row">
+            <div class="product-card">
+                <img src="./images/qp1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>High-performance utility.</p>
+            </div>
+            <div class="product-card">
+                <img src="./images/qp2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Sleek and minimalist design.</p>
+            </div>
+            <div class="product-card">
+                <img src="./images/qp3.jpg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>Limited 2026 Edition.</p>
+            </div>
+        </div>
+        <hr>
+        <h2>Availability Details</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Product 1</td>
+                        <td>$99.00</td>
+                        <td class="status-out">Out of Stock</td>
+                        <td><button disabled style="opacity: 0.5; cursor: not-allowed;">Waitlist</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 2</td>
+                        <td>$59.00</td>
+                        <td class="status-stock">In Stock</td>
+                        <td><button>Buy Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Product 3</td>
+                        <td>$75.00</td>
+                        <td class="status-stock">In Stock</td>
+                        <td><button>Buy Now</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <footer>
+            &copy; 2026 Mini Product Catalog • All Rights Reserved
+        </footer>
+    </div>
+</body>
+</html>
