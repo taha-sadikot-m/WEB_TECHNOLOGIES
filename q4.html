@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Practical</title>
+    <style>
+        button{
+            background-color: indianred;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .greating_message{
+            background-color: indianred;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="start_program">start Program</button>
+    <button id="reset_program">Reset Program</button>
+    <br>
+    <div class="greating_message" id="show_message" hidden>
+
+    </div>
+
+    <script>
+        document.getElementById('start_program').addEventListener('click',function(){
+
+            const greeting = "Hello "
+            const name = prompt("Please Enter your Name")
+            document.getElementById("show_message").append("")
+            document.getElementById("show_message").replaceChildren(greeting + name)
+            document.getElementById("show_message").hidden = false
+        })
+
+        document.getElementById('reset_program').addEventListener('click',function(){
+            document.getElementById("show_message").hidden = true
+        })
+
+    </script>
+</body>
+</html>
