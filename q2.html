@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Signup Form 2026</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modern Signup Form 2026</title>
+        <style>
         :root {
             --primary: #6366f1;
             --primary-hover: #4f46e5;
@@ -29,7 +29,7 @@
             border-radius: 1.25rem;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 480px;
+            max-width: 70%;
         }
 
         h2 {
@@ -44,7 +44,7 @@
             gap: 1.25rem;
         }
 
-        /* 2026 Grid Layout for Names */
+    
         .name-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -64,7 +64,7 @@
             margin-bottom: 0.5rem;
         }
 
-        input {
+        input , select, textarea{
             padding: 0.75rem 1rem;
             border: 1px solid var(--border);
             border-radius: 0.75rem;
@@ -93,42 +93,230 @@
 
         button:hover { background-color: var(--primary-hover); }
         button:active { transform: scale(0.98); }
+
+
+        
+.selection-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.25rem;
+}
+
+
+.selection-item {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+
+.selection-item input[type="checkbox"], 
+.selection-item input[type="radio"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--primary); 
+}
+
+.selection-item label {
+    margin-bottom: 0; 
+    font-weight: 400;
+    color: var(--text);
+    cursor: pointer;
+}
+
     </style>
-</head>
-<body>
+    </head>
+    <body>
 
-    <div class="form-card">
-        <h2>Create account</h2>
-        <form action="#">
-            <div class="name-row">
-                <div class="form-group">
-                    <label for="first-name">First name</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="John" required>
+        <div class="form-card">
+            <h2>Create account</h2>
+            <form action="#" method="get">
+                <div class="name-row">
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" name="first-name"
+                            placeholder="Fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" name="last-name"
+                            placeholder="Lname" required>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="last-name">Last name</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="john@example.com" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-            </div>
+                <div class="name-row">
+                    <div class="form-group">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" name="dob" id="dob" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required>
-            </div>
+                    <div class="form-group">
+                        <label for="jt">Joinng Time</label>
+                        <input type="time" name="jt" id="jt">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
-            </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select name="country" required id="country">
+                        <option value selected>Select Country</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">�land Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AI">Anguilla</option>
+                        <option value="AQ">Antarctica</option>
+                        <option value="AG">Antigua and Barbuda</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AM">Armenia</option>
+                        <option value="AW">Aruba</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BS">Bahamas</option>
+                        <option value="BH">Bahrain</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BB">Barbados</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BZ">Belize</option>
+                        <option value="BJ">Benin</option>
+                        <option value="BM">Bermuda</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="BO">Bolivia, Plurinational State
+                            of</option>
+                        <option value="BQ">Bonaire, Sint Eustatius and
+                            Saba</option>
+                        <option value="BA">Bosnia and Herzegovina</option>
+                        <option value="BW">Botswana</option>
+                        <option value="BV">Bouvet Island</option>
+                        <option value="BR">Brazil</option>
+                        <option value="IO">British Indian Ocean
+                            Territory</option>
+                        <option value="BN">Brunei Darussalam</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="BF">Burkina Faso</option>
+                        <option value="BI">Burundi</option>
+                        <option value="KH">Cambodia</option>
+                    </select>
+                </div>
 
-            <button type="submit">Join Now</button>
-        </form>
-    </div>
+                <div class="name-row">
+                    <div class="form-group">
+                        <label>Working Mode</label>
+                        <div class="selection-container">
 
-</body>
+                            <div class="selection-item">
+                                <input type="checkbox" id="offline" name="mode"
+                                    value="offline">
+                                <label for="offline">Offline</label>
+                            </div>
+
+                            <div class="selection-item">
+                                <input type="checkbox" id="online" name="mode"
+                                    value="online">
+                                <label for="online">Online</label>
+                            </div>
+
+                            <div class="selection-item">
+                                <input type="checkbox" id="hybrid" name="mode"
+                                    value="hybrid">
+                                <label for="hybrid">Hybrid</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="selection-container">
+                            <div class="selection-item">
+                                <input type="radio" id="male" name="gender">
+                                <label for="male">Male</label>
+                            </div>
+
+                            <div class="selection-item">
+                                <input type="radio" id="female" name="gender">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="selection-item">
+                                <input type="radio" id="other" name="gender">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="name-row">
+                    <div class="form-group">
+                        <label for="photo">Photo</label>
+                        <input type="file" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profile-color">Profile Color</label>
+                        <div
+                            style="display: flex; align-items: center; gap: 10px;">
+                            <input type="color" id="profile-color"
+                                name="profile-color" value="#6366f1" style="width: 70%; height: 100%;">
+                           
+                            <div id="color-box"
+                                style="width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--border); background-color: #6366f1;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for>Expected Pay</label>
+                    <input type="range" min="1" max="10" step="5">
+                </div>
+
+                <div class="form-group">
+                    <label for>Bio</label>
+                    <textarea name="bio" id
+                        placeholder="Enter Bio ..."></textarea>
+                </div>
+
+                <div class="name-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                            placeholder="••••••••" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password"
+                            name="confirm-password" placeholder="••••••••"
+                            required minlength="8">
+                    </div>
+                </div>
+
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+        <script>
+const colorInput = document.getElementById('profile-color');
+const colorBox = document.getElementById('color-box');
+
+colorInput.addEventListener('input', () => {
+    colorBox.style.backgroundColor = colorInput.value;
+});
+
+</script>
+    </body>
 </html>
