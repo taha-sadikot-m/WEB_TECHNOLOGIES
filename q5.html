@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Of circle</title>
+    <style>
+        button {
+            background-color: indianred;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input {
+            background-color: indianred;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: whitesmoke;
+        }
+
+        .result {
+            background-color: indianred;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+            border: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="reset_program">Reset Program</button>
+    <button id="run_program">Run Program</button>
+
+    <input type="number" name="" id="radius" placeholder="Enter Radius">
+
+    <br>
+    <div id="result" class="result" hidden>
+
+    </div>
+
+    <script>
+        document.getElementById('reset_program').addEventListener('click', function () {
+            document.getElementById("result").hidden = true
+
+            document.getElementById("radius").value = true
+
+            document.getElementById("radius").focus();
+        })
+
+        document.getElementById('run_program').addEventListener('click', function () {
+            const val = document.getElementById("radius").value
+
+            if (val == 0) {
+                alert("Please enter Radius !!!")
+            } else {
+                const result = 3.14 * val * val
+
+                document.getElementById("result").replaceChildren("Area Of Circle : " + result)
+                document.getElementById("result").hidden = false
+
+            }
+
+
+        })
+
+    </script>
+</body>
+
+</html>
