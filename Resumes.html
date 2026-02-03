@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Taha Sadikot - Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+        .resume {
+            background: #fff;
+            margin: auto;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .header-left h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header-left p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .header-right div {
+            margin-bottom: 6px;
+        }
+
+        .header-right i {
+            width: 18px;
+            margin-right: 6px;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* ---------- SECTION ---------- */
+        .section {
+            margin-bottom: 22px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 4px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            font-style: italic;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul {
+            margin: 6px 0 0 20px;
+            padding: 0;
+            list-style-type:none;
+        }
+
+        ul li {
+            width: 70%;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .tech {
+            font-size: 14px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+        }
+
+        .links a {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .heading_container,.item_sub_info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fa-eye::hover{
+            translate: scale(1.2);
+            cursor: pointer;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .resume {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <img src="./Images/nit_logo.webp" alt="">
+                </div>
+                <div class="info">
+                    <h1>Taha Sadikot</h1>
+                    <p><b>Roll No:</b> 524410034</p>
+                    <p>Master of Computer Application (MCA)</p>
+                    <p>National Institute of Technology, Kurukshetra</p>
+                </div>
+
+            </div>
+
+            <div class="header-right">
+                <div><i class="fa-solid fa-phone"></i> +91-9427030666</div>
+                <div><i class="fa-solid fa-envelope"></i> taha.sadikot.m@gmail.com</div>
+                <div><i class="fa-solid fa-envelope"></i> 524410034@nitkkr.ac.in</div>
+                <div><i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/taha-sadikot-m">GitHub</a>
+                </div>
+                <div><i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/taha-sadikot/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="heading_container">
+                <div class="left">Education</div>
+                <div class="right"><i class="fa-solid fa-eye"></i></div>
+            </h2>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">National Institute of Technology, Kurukshetra</div>
+                    <div class="right">(2027)</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">Master of Computer Application (MCA)</div>
+                    <div class="right">CGPA: 9.3</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Uka Tarsadiya University</div>
+                    <div class="right">(2022)</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">B.Sc. Information Technology</div>
+                    <div class="right">CGPA: 9.8</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Jeevan Bharti School</div>
+                    <div class="right">(2019)</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">GSHSEB, Gujarat</div>
+                    <div class="right">Percentage: 80.5%</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- EXPERIENCE -->
+        <div class="section">
+            <h2 class="heading_container">
+                <div class="left">Experience</div>
+                <div class="right"><i class="fa-solid fa-eye"></i></div>
+            </h2>
+            <div class="item">
+                <div class="item-title">
+                    <div class="right">Digital Nexus AI </div>
+                    <div class="left">(May-Aug 2025)</div>
+                </div>
+                <div class="item_sub_info">
+                    <div class="right">
+                        Gen AI Intern
+                    </div>
+                    <div class="left">
+                        Remote
+                    </div>
+                </div>
+                <ul>
+                    <li>Over the Course of my Internship i was responsible for working in the team to create the different components of
+the different Products of the company which includes RAG Application, MCP Server, RAG Evaluation</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <div class="right">Ransh Innovations </div>
+                    <div class="left">(Mar-Jul 2025)</div>
+                </div>
+                <div class="item_sub_info">
+                    <div class="right">
+                        Prompt Engineering Intern
+                    </div>
+                    <div class="left">
+                        Remote
+                    </div>
+                </div>
+                <ul>
+                    <li>Over the duration of my internship, I was responsible for creating the different prompts for companies different
+products , test them and validate them and create the prompt templates for the automated workflows.</li>
+                </ul>
+            </div>
+            
+
+            
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+            <h2 class="heading_container">
+                <div class="left">Personal Projects</div>
+                <div class="right"><i class="fa-solid fa-eye"></i></div>
+            </h2>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">NOA - Smart LinkedIn Content Generator</div>
+                    <div class="right">Current</div>
+                </div>
+                <p style="font-size: 14px; font-style: italic; margin: 4px 0;">NOA is an AI powered Human Like content Creator AI Agent</p>
+                <ul>
+                    <li><b>Project Description:</b> NOA is a platform which generates personalized, human-like content by learning from the user's LinkedIn profile data and posting styles.It uses 5+ dedicated tools in AI workflow to learn, create, evaluate, iterate, and enhance the quality of content suitable to user needs to elevate the user's posts on LinkedIn.</li>
+                    <li><b>Tools & technologies used:</b> LangGraph, LangChain, OCR, Web Scrapping, Gmail, HTML, CSS, JavaScript, Flask, Supabase, LLM ( Gemini )</li>
+                    <li><b>GitHub Repository:</b> <a href="https://github.com/NOA-Smart-LinkedIn-Content-Generator">NOA-Smart-LinkedIn-Content-Generator</a></li>
+                    <li><b>Live Project Link:</b> <a href="https://noa.entrext.in/">https://noa.entrext.in/</a></li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Automate Tableau Dashboard Generator</div>
+                    <div class="right">June 2025</div>
+                </div>
+                <p style="font-size: 14px; font-style: italic; margin: 4px 0;">It is an platform which generate automated dashboard from user uploaded data.</p>
+                <ul>
+                    <li><b>Project Description:</b> It is an platform which allow user to upload the data fine and platform will perform the correlation analysis of the data and decide the list of visualization posibly that can be generated and after that the .twbx tablue dashboard package file will be created that user can directly import into the the tablue platform.All the visualization file (.twb) is created using tableauhyperapi in XML format.</li>
+                    <li><b>Tools & technologies used:</b> HTML, CSS, JavaScript, Flask, numpy, pandas, tableauhyperapi</li>
+                    <li><b>GitHub Repository:</b> <a href="https://github.com/Tableau-Dashboard-Generator">Tableau-Dashboard-Generator</a></li>
+                    <li><b>Live Project Link:</b> <a href="https://teablue-dashabard-automation.onrender.com">https://teablue-dashabard-automation.onrender.com</a></li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Mydebate AI</div>
+                    <div class="right">May-June 2025</div>
+                </div>
+                <p style="font-size: 14px; font-style: italic; margin: 4px 0;">This is the online debate platfor which allow user to perform debate with AI on user selected topic</p>
+                <ul>
+                    <li><b>Project Description:</b> This is the platform which allow user to create the debate room with user selecte topic and it allow user to practice its debate skills by competing with AI. Platform have Text to Speach (TTS) and Speach to Text (STT) for user query and AI response delivery. At the end of debate it provide user with analysis of things that can be improved by performing analysis on user arguments presented during debate by user.</li>
+                    <li><b>Tools & technologies used:</b> React, HTML,CSS,JavaScript, LLM</li>
+                    <li><b>GitHub Repository:</b> <a href="https://github.com/Debate-With-AI">Debate-With-AI</a></li>
+                    <li><b>Live Project Link:</b> <a href="#">MydebateAI , MyuterviewAI</a></li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Saksham Nari</div>
+                    <div class="right">December 2024 - February 2025</div>
+                </div>
+                <p style="font-size: 14px; font-style: italic; margin: 4px 0;">Finance Bot created with vision to reduce the gender gap in finance literacy in India</p>
+                <ul>
+                    <li><b>Project Description:</b> Telegram Bot and Web platform are created to provide the user with the personalized information for their finance queries for their easy understanding. Web platform provide user's with the information about government schema for their particular use case.The Platform use the latest Web Searching functionality of Google API to provide citations to increase the output quality.The Bot is created in Two laguages Eglish and Hindi</li>
+                    <li><b>Tools & technologies used:</b> HTML,CSS,JavaScript,Telegram API,Flask, LLM</li>
+                    <li><b>GitHub Repository:</b> <a href="https://github.com/shakshamNari-Nari">shakshamNari-Nari</a></li>
+                    <li><b>Live Project Link:</b> <a href="#">shakshamNari-Web-Platform</a></li>
+                    <li><b>Telegram Bot Demo:</b> shakshamNari-Bot</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Automated Content Creation</div>
+                    <div class="right">November - December 2024</div>
+                </div>
+                <p style="font-size: 14px; font-style: italic; margin: 4px 0;">Project to build all the open source resources for Content Creation using automation</p>
+                <ul>
+                    <li><b>Project Description:</b> This is the platform which allow user to create the content planner for whole weeks or months according to their posting pattern, user have to generate text, Image and Video content and post them directly in their Social Media Platforms (Twitter, LinkedIn, FaceBook, YouTube). It has a functionality to Create YouTube Shorts from long Video, Generate video from single Input using YouTube transcript processing and moviepy library and other open source resourced from scratch including voiceover and text transcript over video</li>
+                    <li><b>Tools & technologies used:</b> HTML,CSS,JavaScript,LLM, MoviePy, NLP, TTS, STT, Social Media APIs, Image Generation</li>
+                    <li><b>Project Demo:</b> <a href="#">Platform Explanation Link</a></li>
+                    <li><b>Video Generation Result:</b> <a href="#">Click Here</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- OPEN SOURCE -->
+        <div class="section">
+            <h2 class="heading_container">
+                <div class="left">Open Source Contribution</div>
+                <div class="right"><i class="fa-solid fa-eye"></i></div>
+            </h2>
+            <div class="item">
+                <div class="item-title">Liquid Galaxy</div>
+                <ul>
+                    <li>Part of the team of GSoC 2025.</li>
+                    <li>Contributed with multiple solutions such as integrating the LLM in the markup Generation functionality to increase the blog quality for the platform LGWiki. find the solutions of connecting the LG (Liquid Galaxy) Grid with cloud VM using revers SSH technique. created the protoype of LGLite (web Based Panoramic display</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section">
+            <h2>Technical Skills and Interests</h2>
+            <div style="font-size: 14px;">
+                <div style="margin-bottom: 6px;"><b>Languages:</b> C, C++, PHP, Python, Java, HTML, CSS, JavaScript, SQL, Cypher, shell Script</div>
+                <div style="margin-bottom: 6px;"><b>Developer Tools:</b> VSCode, Atom, Pycharm, NetBeans, JetBrains IDEs</div>
+                <div style="margin-bottom: 6px;"><b>Frameworks:</b> Flask, FastAPI, React, Django, Jquery</div>
+                <div style="margin-bottom: 6px;"><b>Cloud/Databases:</b> MySQL, Oracle, MongoDB, SQLite, Milvis, Neo4j</div>
+                <div style="margin-bottom: 6px;"><b>Soft Skills:</b> Fluency in public speaking, Team player, Self disciplin, Hard Working</div>
+                <div style="margin-bottom: 6px;"><b>Coursework:</b> Project Management, Database Management, Full Stack Development Creation, Automation using Agentic Workflow</div>
+                <div style="margin-bottom: 6px;"><b>Areas of Interest:</b> LLM, Prompt Engineering, Agentic Workflows, NLP, AI</div>
+            </div>
+        </div>
+
+        <!-- RESPONSIBILITY -->
+        <div class="section">
+            <h2 class="heading_container">
+                <div class="left">Positions of Responsibility</div>
+                <div class="right"><i class="fa-solid fa-eye"></i></div>
+            </h2>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Tech Co-founder/ Product Owner</div>
+                    <div class="right">Current</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">Speak Your Mind</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Tech Co-founder</div>
+                    <div class="right">Current</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">Entrext</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <div class="left">Joint secretary,</div>
+                    <div class="right">Current</div>
+                </div>
+                <div class="item-subtitle">
+                    <div class="left">Mexpert ( technical societies of NIT Kurukshetra )</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+
+</html>
