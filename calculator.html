@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .calc-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .calc-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        /* Basic Calculator Styles */
+        #display {
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            background: #f5f5f5;
+        }
+
+        #display:focus {
+            outline: none;
+            border: 3px solid #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #667eea;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+            transform: scale(1.05);
+        }
+
+        .btn.operator {
+            background: #764ba2;
+        }
+
+        .btn.operator:hover {
+            background: #653a8f;
+        }
+
+        .btn.operator:focus {
+            box-shadow: 0 0 10px rgba(118, 75, 162, 0.8);
+        }
+
+        .btn.equal {
+            background: #28a745;
+            grid-column: span 2;
+        }
+
+        .btn.equal:hover {
+            background: #218838;
+        }
+
+        .btn.equal:focus {
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.8);
+        }
+
+        .btn.clear {
+            background: #dc3545;
+            grid-column: span 2;
+        }
+
+        .btn.clear:hover {
+            background: #c82333;
+        }
+
+        .btn.clear:focus {
+            box-shadow: 0 0 10px rgba(220, 53, 69, 0.8);
+        }
+
+        /* CGPA & BMI Calculator Styles */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border: 3px solid #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .calc-btn:hover {
+            background: #5568d3;
+            transform: scale(1.02);
+        }
+
+        .calc-btn:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+            transform: scale(1.02);
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Purpose Calculator</h1>
+        
+        <div class="calculator-grid">
+            <!-- Basic Calculator -->
+            <div class="calc-section">
+                <h2>Basic Calculator</h2>
+                <input type="text" id="display" tabindex="1">
+                <div class="buttons">
+                    <button class="btn" onclick="appendToDisplay('7')" tabindex="2">7</button>
+                    <button class="btn" onclick="appendToDisplay('8')" tabindex="3">8</button>
+                    <button class="btn" onclick="appendToDisplay('9')" tabindex="4">9</button>
+                    <button class="btn operator" onclick="playOperatorSound(); appendToDisplay('/')" tabindex="5">/</button>
+                    
+                    <button class="btn" onclick="appendToDisplay('4')" tabindex="6">4</button>
+                    <button class="btn" onclick="appendToDisplay('5')" tabindex="7">5</button>
+                    <button class="btn" onclick="appendToDisplay('6')" tabindex="8">6</button>
+                    <button class="btn operator" onclick="playOperatorSound(); appendToDisplay('*')" tabindex="9">*</button>
+                    
+                    <button class="btn" onclick="appendToDisplay('1')" tabindex="10">1</button>
+                    <button class="btn" onclick="appendToDisplay('2')" tabindex="11">2</button>
+                    <button class="btn" onclick="appendToDisplay('3')" tabindex="12">3</button>
+                    <button class="btn operator" onclick="playOperatorSound(); appendToDisplay('-')" tabindex="13">-</button>
+                    
+                    <button class="btn" onclick="appendToDisplay('0')" tabindex="14">0</button>
+                    <button class="btn" onclick="appendToDisplay('.')" tabindex="15">.</button>
+                    <button class="btn equal" onclick="calculate()" tabindex="16">=</button>
+                    <button class="btn operator" onclick="playOperatorSound(); appendToDisplay('+')" tabindex="17">+</button>
+                    
+                    <button class="btn clear" onclick="clearDisplay()" tabindex="18">Clear</button>
+                    <button class="btn" onclick="backspace()" tabindex="19">⌫</button>
+                </div>
+            </div>
+
+            <!-- CGPA to Percentage Calculator -->
+            <div class="calc-section">
+                <h2>CGPA to Percentage</h2>
+                <div class="input-group">
+                    <label for="cgpa">Enter CGPA (0-10):</label>
+                    <input type="number" id="cgpa" placeholder="e.g., 8.5" step="0.01" min="0" max="10" tabindex="20">
+                </div>
+                <div class="input-group">
+                    <label for="multiplier">Multiplication Factor:</label>
+                    <input type="number" id="multiplier" placeholder="Default: 9.5" step="0.1" min="1" max="20" value="9.5" tabindex="21">
+                </div>
+                <button class="calc-btn" onclick="calculatePercentage()" tabindex="22">Convert to Percentage</button>
+                <div class="result" id="percentageResult">Result will appear here</div>
+            </div>
+
+            <!-- BMI Calculator -->
+            <div class="calc-section">
+                <h2>BMI Calculator</h2>
+                <div class="input-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" placeholder="e.g., 70" step="0.1" min="0" tabindex="23">
+                </div>
+                <div class="input-group">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" placeholder="e.g., 175" step="0.1" min="0" tabindex="24">
+                </div>
+                <button class="calc-btn" onclick="calculateBMI()" tabindex="25">Calculate BMI</button>
+                <div class="result" id="bmiResult">Result will appear here</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sound Effects using Web Audio API
+        function playClickSound() {
+            var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            var oscillator = audioContext.createOscillator();
+            var gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 800;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.1);
+        }
+
+        function playOperatorSound() {
+            var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            var oscillator = audioContext.createOscillator();
+            var gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 600;
+            oscillator.type = 'square';
+            
+            gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.15);
+        }
+
+        function playEqualSound() {
+            var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            var oscillator = audioContext.createOscillator();
+            var gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 1000;
+            oscillator.type = 'triangle';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.2);
+        }
+
+        function playClearSound() {
+            var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            var oscillator = audioContext.createOscillator();
+            var gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = 400;
+            oscillator.type = 'sawtooth';
+            
+            gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.25);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.25);
+        }
+
+        // Basic Calculator Functions
+        function appendToDisplay(value) {
+            playClickSound();
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            playClearSound();
+            document.getElementById('display').value = '';
+        }
+
+        function backspace() {
+            playOperatorSound();
+            var display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            playEqualSound();
+            var display = document.getElementById('display');
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+                setTimeout(clearDisplay, 1500);
+            }
+        }
+
+        // CGPA to Percentage Calculator
+        function calculatePercentage() {
+            playEqualSound();
+            var cgpa = parseFloat(document.getElementById('cgpa').value);
+            var multiplier = parseFloat(document.getElementById('multiplier').value);
+            var resultDiv = document.getElementById('percentageResult');
+            
+            if (isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
+                resultDiv.innerHTML = 'Please enter a valid CGPA (0-10)';
+                resultDiv.style.color = 'red';
+                return;
+            }
+            
+            if (isNaN(multiplier) || multiplier <= 0) {
+                multiplier = 9.5;
+            }
+            
+            var percentage = cgpa * multiplier;
+            resultDiv.innerHTML = 'Percentage: ' + percentage.toFixed(2) + '% (using factor: ' + multiplier + ')';
+            resultDiv.style.color = '#28a745';
+        }
+
+        // BMI Calculator
+        function calculateBMI() {
+            playEqualSound();
+            var weight = parseFloat(document.getElementById('weight').value);
+            var height = parseFloat(document.getElementById('height').value);
+            var resultDiv = document.getElementById('bmiResult');
+            
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                resultDiv.innerHTML = 'Please enter valid values';
+                resultDiv.style.color = 'red';
+                return;
+            }
+            
+            // Convert height from cm to meters
+            var heightInMeters = height / 100;
+            var bmi = weight / (heightInMeters * heightInMeters);
+            
+            var category = '';
+            var color = '';
+            
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                color = '#ffc107';
+            } else if (bmi < 25) {
+                category = 'Normal';
+                color = '#28a745';
+            } else if (bmi < 30) {
+                category = 'Overweight';
+                color = '#ff9800';
+            } else {
+                category = 'Obese';
+                color = '#dc3545';
+            }
+            
+            resultDiv.innerHTML = 'BMI: ' + bmi.toFixed(2) + ' (' + category + ')';
+            resultDiv.style.color = color;
+        }
+
+        // Allow Enter key for calculations
+        document.getElementById('display').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculate();
+            }
+        });
+
+        document.getElementById('display').addEventListener('keydown', function(event) {
+            // Allow Escape key to clear display
+            if (event.key === 'Escape') {
+                clearDisplay();
+                event.preventDefault();
+            }
+            // Allow Backspace for deletion (default behavior works)
+            // Allow only numbers, operators, and decimal point
+            var allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
+                             '+', '-', '*', '/', '.', '(', ')', 
+                             'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 
+                             'Home', 'End', 'Tab', 'Enter', 'Escape'];
+            
+            if (!allowedKeys.includes(event.key) && !event.ctrlKey && !event.metaKey) {
+                event.preventDefault();
+            }
+        });
+
+        document.getElementById('cgpa').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculatePercentage();
+            }
+        });
+
+        document.getElementById('multiplier').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculatePercentage();
+            }
+        });
+
+        document.getElementById('weight').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculateBMI();
+            }
+        });
+
+        document.getElementById('height').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                calculateBMI();
+            }
+        });
+    </script>
+</body>
+</html>
